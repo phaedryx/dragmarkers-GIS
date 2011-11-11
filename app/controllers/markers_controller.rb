@@ -41,6 +41,8 @@ class MarkersController < ApplicationController
   # POST /markers.json
   def create
     @marker = Marker.new(params[:marker])
+    @marker.latitude = params[:latitude]
+    @marker.longitude = params[:longitude]
 
     respond_to do |format|
       if @marker.save

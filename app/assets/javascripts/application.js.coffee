@@ -39,9 +39,14 @@ class App extends Spine.Controller
     x = event.pageX - @_offset.left
     y = event.pageY - @_offset.top
     point = new google.maps.Point(x,y)
-    latlon = @_overlay.getProjection().fromContainerPixelToLatLng(point)
+    latlng = @_overlay.getProjection().fromContainerPixelToLatLng(point)
     icon = ui.helper[0].src
-    new google.maps.Marker({position: latlon, map: @_map, icon: icon, draggable: true})
+    marker = App.Marker.create({
+      latitude: latlng.lat()
+      longitude: latlng.lng()
+      icon: icon
+    })
+    marker.setMap(@_map)
 
 
 window.App = App
