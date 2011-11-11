@@ -1,0 +1,22 @@
+development:
+  adapter: postgis
+  encoding: utf8
+  database: dragmarkers_development
+  username: dragmarkers
+  password: dragmarkers
+  template: template_postgis
+  host: localhost
+  pool: 5
+
+test:
+  adapter: postgis
+  encoding: utf8
+  database: dragmarkers_test
+  username: dragmarkers
+  password: dragmarkers
+  template: template_postgis
+  host: localhost
+  schema_search_path: public,postgis
+  script_dir: /Library/PostgreSQL/9.0/share/postgresql/contrib
+  min_messages: warning
+  pool: 5
