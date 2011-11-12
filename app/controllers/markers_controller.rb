@@ -59,6 +59,8 @@ class MarkersController < ApplicationController
   # PUT /markers/1.json
   def update
     @marker = Marker.find(params[:id])
+    params[:marker][:latitude] = params[:latitude]
+    params[:marker][:longitude] = params[:longitude]
 
     respond_to do |format|
       if @marker.update_attributes(params[:marker])

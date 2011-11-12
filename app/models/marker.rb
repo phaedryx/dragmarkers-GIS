@@ -1,5 +1,7 @@
 class Marker < ActiveRecord::Base
 
+  attr_accessible :latitude, :longitude
+
   def longitude
     @longitude || lonlat.try(:longitude)
   end
