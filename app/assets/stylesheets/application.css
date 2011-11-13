@@ -13,6 +13,9 @@ body, html {
   overflow: auto;
 }
 #page {
-  width: 650px;
+  width: 600px;
   margin: 10px auto;
+}
+#app {
+  background: #EEE;
 }
