@@ -1,3 +1,4 @@
+<div id="map"></div>
 <img id="0" class="marker" src="/assets/0.png" />
 <img id="1" class="marker" src="/assets/1.png" />
 <img id="2" class="marker" src="/assets/2.png" />

@@ -3,6 +3,7 @@ Marker = App.Marker
 
 class App.MarkersController extends Spine.Controller
   elements:
+    "#map" : "mapEl"
     ".marker" : "markerIcons"
 
   constructor: ->
@@ -19,7 +20,7 @@ class App.MarkersController extends Spine.Controller
       center: new google.maps.LatLng(39.828175, -98.5795)
       mapTypeId: google.maps.MapTypeId.ROADMAP
     }
-    @map = new google.maps.Map(document.getElementById('map'), options)
+    @map = new google.maps.Map(@mapEl[0], options)
 
   createMapOverlay: ->
     @overlay = new google.maps.OverlayView()
@@ -29,6 +30,7 @@ class App.MarkersController extends Spine.Controller
   makeIconsDraggable: ->
     @markerIcons.draggable({
       helper: 'clone'
+      containment: 'parent'
       stop: (event, ui) => @placeMarker(event, ui)
     })
 
